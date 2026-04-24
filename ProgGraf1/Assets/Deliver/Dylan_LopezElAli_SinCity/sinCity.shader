@@ -163,7 +163,7 @@ Shader "sinCity"
 }
 /*ASEBEGIN
 Version=18900
-203.2;73.6;1441.2;768.6;2376.297;895.5178;2.504034;True;True
+172;73.6;1615.6;800.6;1210.25;139.778;1.076898;True;True
 Node;AmplifyShaderEditor.CommentaryNode;23;-1281.125,329.4398;Inherit;False;697.2056;441.8848;Fresnel y parametrización;4;11;10;15;9;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.RangedFloatNode;11;-1219.136,518.7539;Inherit;False;Property;_FresnelScale;FresnelScale;1;0;Create;True;0;0;0;False;0;False;5;0;1;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;10;-1231.125,655.9246;Inherit;False;Property;_FresnelPow;FresnelPow;0;0;Create;True;0;0;0;False;0;False;3;0;1;6;0;1;FLOAT;0
@@ -190,4 +190,4 @@ WireConnection;16;1;18;0
 WireConnection;16;2;20;0
 WireConnection;0;15;16;0
 ASEEND*/
-//CHKSM=31C96CCC82CD33E682972DFB7331B85B0EE9A57C
+//CHKSM=4926B9E910D337FC2A8DF6DEDA14F81425A562DD
