@@ -3,7 +3,7 @@ guid: f26495b19f7cb7c42a373d0dbed27657
 ShaderImporter:
   externalObjects: {}
   defaultTextures:
-  - _cfxraurarays: {fileID: 2800000, guid: aef6f9c943a864545ad9aa785233f8f5, type: 3}
+  - _cfxraurarays: {fileID: 2800000, guid: 5884620ae9000924caaf616d4c91a5b0, type: 3}
   nonModifiableTextures: []
   userData: 
   assetBundleName: 

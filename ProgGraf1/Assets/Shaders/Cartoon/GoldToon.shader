@@ -152,16 +152,19 @@ Shader "GoldToon"
 }
 /*ASEBEGIN
 Version=18900
-235;73;1302;590;1146.849;133.5526;1;True;False
+235;73;1302;590;2734.965;496.7447;2.574928;True;False
+Node;AmplifyShaderEditor.CommentaryNode;13;-1073.934,252.0305;Inherit;False;650.0033;521.0004;Cálculo de sombra toon;5;1;2;3;5;4;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.WorldNormalVector;1;-1023.934,398.0306;Inherit;False;False;1;0;FLOAT3;0,0,1;False;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.WorldSpaceLightDirHlpNode;2;-1023.934,590.0308;Inherit;False;False;1;0;FLOAT;0;False;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
+Node;AmplifyShaderEditor.CommentaryNode;11;-828.0048,-264.5088;Inherit;False;480.0081;442;Mezcla de luz y sombra;3;6;7;8;;1,1,1,1;0;0
 Node;AmplifyShaderEditor.DotProductOpNode;3;-751.9307,542.0306;Inherit;False;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;5;-927.9317,302.0305;Inherit;False;Property;_umbralSombra;umbralSombra;0;0;Create;True;0;0;0;False;0;False;0;0.5;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.CommentaryNode;12;-395.9557,193.5194;Inherit;False;389.1721;277.4992;Color e intensidad de luz;2;9;10;;1,1,1,1;0;0
+Node;AmplifyShaderEditor.ColorNode;6;-778.0048,-214.5088;Inherit;False;Property;_Luz;Luz;1;0;Create;True;0;0;0;False;0;False;0.8867924,0.8247297,0.07111073,1;0.8867924,0.8247297,0.07111073,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;7;-778.0048,-34.50903;Inherit;False;Property;_Sombra;Sombra;2;0;Create;True;0;0;0;False;0;False;0.5566038,0.5164509,0.02888039,1;0.5566038,0.5164509,0.02888039,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.StepOpNode;4;-575.9307,398.0306;Inherit;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;6;-591.9307,-1.969787;Inherit;False;Property;_Luz;Luz;1;0;Create;True;0;0;0;False;0;False;0.8867924,0.8247297,0.07111073,1;0.8867924,0.8247297,0.07111073,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;7;-591.9307,178.0302;Inherit;False;Property;_Sombra;Sombra;2;0;Create;True;0;0;0;False;0;False;0.5566038,0.5164509,0.02888039,1;0.5566038,0.5164509,0.02888039,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.LerpOp;8;-529.9952,-38.48213;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.LightColorNode;9;-345.9557,312.0186;Inherit;False;0;3;COLOR;0;FLOAT3;1;FLOAT;2
-Node;AmplifyShaderEditor.LerpOp;8;-343.9227,174.0571;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;10;-168.7836,243.5194;Inherit;False;2;2;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;0,0;Float;False;True;-1;2;ASEMaterialInspector;0;0;CustomLighting;GoldToon;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Opaque;0.5;True;True;0;False;Opaque;;Geometry;All;14;all;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;0;0;False;-1;0;False;-1;0;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;0;False;0.1;False;-1;0;False;-1;False;15;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT3;0,0,0;False;4;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;3;0;1;0
@@ -175,4 +178,4 @@ WireConnection;10;0;8;0
 WireConnection;10;1;9;0
 WireConnection;0;13;10;0
 ASEEND*/
-//CHKSM=C1F5C8B0D17031B0B9619EBB3E6BDFEF48A01D6B
+//CHKSM=22CF9E0FE7E1FB84210D091FCD03902260CA91DD
