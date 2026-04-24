@@ -2,10 +2,9 @@ fileFormatVersion: 2
 guid: 8bb4d62b87cf47f449a277e392371d59
 ShaderImporter:
   externalObjects: {}
-  defaultTextures:
-  - _pisoladrillosNormal: {fileID: 2800000, guid: 3d5d330be27c5e549844f578a2c1f815, type: 3}
-  - _pisoladrillos: {fileID: 2800000, guid: 1fd68403c9f6ee84b8784e49676d191e, type: 3}
+  defaultTextures: []
   nonModifiableTextures: []
+  preprocessorOverride: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -55,7 +55,7 @@ Material:
     - _NubeSuavidad: 0.08
     - _NubeUmbral: 0.538
     - _NubeVelocidad: 0.1
-    - _ShadowThreshold: 0.5
+    - _ShadowThreshold: 0.402
     - _Tesselletion: 29.63
     - _TexturaTiling: 4
     - _UmbralHierba: 0.439
