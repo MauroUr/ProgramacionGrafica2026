@@ -45,7 +45,7 @@ Shader "WorldUV"
 }
 /*ASEBEGIN
 Version=18900
-358;73;1141;581;932.5125;69.70654;1.354061;True;False
+390;73;1163;719;2080.175;771.5837;3.038296;True;False
 Node;AmplifyShaderEditor.WorldPosInputsNode;1;-723.5,63.5;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.ComponentMaskNode;2;-553.4984,58.50167;Inherit;False;True;True;False;True;1;0;FLOAT3;0,0,0;False;1;FLOAT2;0
 Node;AmplifyShaderEditor.Vector2Node;4;-675.4267,-97.48502;Inherit;False;Property;_Scale;Scale;0;0;Create;True;0;0;0;False;0;False;20,20;20,20;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
@@ -66,4 +66,4 @@ WireConnection;0;0;6;0
 WireConnection;0;1;8;0
 WireConnection;0;5;9;1
 ASEEND*/
-//CHKSM=19257ACDD26799AC7408377CB427193251141110
+//CHKSM=55B4AA14357A84AFBE62CE9051F0476D56F1902B

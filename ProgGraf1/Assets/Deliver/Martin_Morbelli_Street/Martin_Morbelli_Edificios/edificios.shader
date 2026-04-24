@@ -142,7 +142,7 @@ Shader "edificios"
 }
 /*ASEBEGIN
 Version=18900
-363;73;1099;534;1015.281;125.6199;1;True;False
+390;73;1163;719;1259.504;254.8374;1.631964;True;False
 Node;AmplifyShaderEditor.Vector2Node;4;-626.536,183.2972;Inherit;False;Property;_EscalaEdificio;EscalaEdificio;1;0;Create;True;0;0;0;False;0;False;0,0;0,0;0;3;FLOAT2;0;FLOAT;1;FLOAT;2
 Node;AmplifyShaderEditor.WorldPosInputsNode;1;-654.7893,-6.569056;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3
 Node;AmplifyShaderEditor.TriplanarNode;6;-402.2046,-30.04881;Inherit;True;Spherical;World;False;Top Texture 0;_TopTexture0;white;0;None;Mid Texture 0;_MidTexture0;white;-1;None;Bot Texture 0;_BotTexture0;white;-1;None;Triplanar Sampler;Tangent;10;0;SAMPLER2D;;False;5;FLOAT;1;False;1;SAMPLER2D;;False;6;FLOAT;0;False;2;SAMPLER2D;;False;7;FLOAT;0;False;9;FLOAT3;0,0,0;False;8;FLOAT;1;False;3;FLOAT2;1,1;False;4;FLOAT;1;False;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
@@ -151,4 +151,4 @@ WireConnection;6;9;1;0
 WireConnection;6;3;4;0
 WireConnection;0;0;6;0
 ASEEND*/
-//CHKSM=E7B089A9E7CDA070BB69D387A6F2193BB573C146
+//CHKSM=A5752685B6B0F16E155BEF2D18D24EB32D2723FE
