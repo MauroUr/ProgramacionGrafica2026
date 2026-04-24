@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 8c2227dc42e874c49a12711eb2c96a47
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _androidTypo01_suit: {fileID: 2800000, guid: 5cffb1b04f25f9e43aee736c74c5a193, type: 3}
+  - _TextureSample0: {fileID: 2800000, guid: 14fbeebef2ed6094483d60b9041036bb, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
