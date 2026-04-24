@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_ToonIsla
+  m_Shader: {fileID: 4800000, guid: c50dba4cc120750488925be9dc1993aa, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: 483fd87da2543a14c877fd1122345ef7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexturaArena:
+        m_Texture: {fileID: 2800000, guid: 6638f07d19ac1214892f77a43b7422f4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexturaHierba:
+        m_Texture: {fileID: 2800000, guid: ce4eba25cd0a31641b9063069502e89b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexturaRocaCima:
+        m_Texture: {fileID: 2800000, guid: ce4eba25cd0a31641b9063069502e89b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 483fd87da2543a14c877fd1122345ef7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlturaMaxima: 5
+    - _AlturaMinima: 0
+    - _AnchoBandaMojada: 0.83
+    - _NivelDelAgua: 1.9
+    - _NubeEscala: 100
+    - _NubeIntensidad: 0.636
+    - _NubeSuavidad: 0.08
+    - _NubeUmbral: 0.538
+    - _NubeVelocidad: 0.1
+    - _ShadowThreshold: 0.5
+    - _Tesselletion: 29.63
+    - _TexturaTiling: 4
+    - _UmbralHierba: 0.439
+    - _UmbralRoca: 0.65
+    - _ZoneBlendWidth: 0.05
+    - __dirty: 0
+    m_Colors:
+    - _TinteMojado: {r: 0.45, g: 0.38, b: 0.25, a: 1}
+  m_BuildTextureStacks: []

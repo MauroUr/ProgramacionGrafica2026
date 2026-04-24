@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_ToonWaterV2
+  m_Shader: {fileID: 4800000, guid: 7a39d96870e9ff74cac3d1134b0e684c, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FlowMapRXGY:
+        m_Texture: {fileID: 2800000, guid: d898be09256b2e145b42bb23fec73952, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TexturaAguaToon:
+        m_Texture: {fileID: 2800000, guid: b6f9daaee7bcbde419c2a96e948cce2f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _EspumaBias: 0.3
+    - _EspumaPower: 4.51
+    - _EspumaScale: 1.34
+    - _NubeEscala: 50
+    - _NubeIntensidad: 0.5
+    - _NubeSuavidad: 0.15
+    - _NubeUmbral: 0.5
+    - _NubeVelocidad: 0.05
+    - _OleajeAmplitud: 0.399
+    - _OleajeFrecuencia: 10
+    - _OleajeVelocidad: 0.1
+    - _PanSpeed: 0.5
+    - _PesoDistorsion: 0.196
+    - _Tiling: 60
+    m_Colors:
+    - _PanDireccionXY: {r: 0.1, g: 0.05, b: 0, a: 0}
+  m_BuildTextureStacks: []
