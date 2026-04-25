@@ -46,7 +46,7 @@ Material:
     - _OleajeFrecuencia: 10
     - _OleajeVelocidad: 0.1
     - _PanSpeed: 0.5
-    - _PesoDistorsion: 0.196
+    - _PesoDistorsion: 0.5
     - _Tiling: 60
     m_Colors:
     - _PanDireccionXY: {r: 0.1, g: 0.05, b: 0, a: 0}
