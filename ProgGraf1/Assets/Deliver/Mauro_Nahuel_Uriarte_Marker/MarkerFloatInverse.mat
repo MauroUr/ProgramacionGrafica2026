@@ -9,6 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MarkerFloatInverse
   m_Shader: {fileID: 4800000, guid: 92f32a6bbfff6cc408f2ec31779b1dff, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -17,6 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -31,11 +34,11 @@ Material:
     m_Ints: []
     m_Floats:
     - __dirty: 0
-    - _emissionStrength: 1
+    - _emissionStrength: 0.1
     - _oscilacionX: -3
     - _oscilacionZ: -5
     - _speedRotacion: -2
-    - _speedSubida: 2
+    - _speedSubida: 0.5
     m_Colors:
-    - _AlturaMarker: {r: 0, g: 1, b: 0, a: 0}
+    - _AlturaMarker: {r: 0, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
