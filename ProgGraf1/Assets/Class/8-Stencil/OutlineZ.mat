@@ -32,7 +32,7 @@ Material:
     - _Scale: 0.62
     - _Step: 0.317
     - _Thickness: 0.06
-    - __dirty: 0
+    - __dirty: 1
     m_Colors:
     - _ASEOutlineColor: {r: 0, g: 1, b: 0.75639486, a: 1}
     - _HidenColor: {r: 0, g: 1, b: 0.7568628, a: 1}
