@@ -22,6 +22,19 @@ public class BigGunShooterFX : MonoBehaviour
     public float lightIntensity = 1.5f;
     public float lightRange = 2.5f;
 
+    [Header("Bala")]
+    [Tooltip("Prefab del proyectil (usa el shader Custom/BulletSciFi)")]
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 45f;
+
+    [Header("Disparo cargado")]
+    [Tooltip("Cuanto mas grande es la bala con carga maxima")]
+    public float chargedScaleMul = 3f;
+    [Tooltip("Velocidad de la bala con carga maxima (mas lenta)")]
+    public float chargedBulletSpeed = 14f;
+    [Tooltip("Cuanto mas grande es la marca de impacto con carga maxima")]
+    public float chargedDecalMul = 2.2f;
+
     [Header("Disparo / Impacto")]
     public float range = 60f;
     public LayerMask hitMask = ~0;
@@ -35,6 +48,7 @@ public class BigGunShooterFX : MonoBehaviour
     private Material flashMat;
     private Light muzzleLight;
     private Camera _cam;
+    private bool firing;
 
     void Start()
     {
@@ -106,13 +120,50 @@ public class BigGunShooterFX : MonoBehaviour
 
     public void Shoot()
     {
-        if (flashTr == null) BuildMuzzle();
-        StartCoroutine(FlashRoutine());
-        SpawnImpact();
+        Shoot(0f);
     }
 
-    IEnumerator FlashRoutine()
+    public void Shoot(float charge01)
     {
+        if (flashTr == null) BuildMuzzle();
+        charge01 = Mathf.Clamp01(charge01);
+        StartCoroutine(FlashRoutine(Mathf.Lerp(1f, 1.8f, charge01)));
+        SpawnBullet(charge01);
+    }
+
+    public void SetCharge(float charge01)
+    {
+        if (flashTr == null) BuildMuzzle();
+        if (firing) return;
+
+        charge01 = Mathf.Clamp01(charge01);
+
+        if (charge01 <= 0.001f)
+        {
+            if (muzzleLight != null) muzzleLight.intensity = 0f;
+            flashMat.SetColor("_TintColor", Color.black);
+            flashTr.gameObject.SetActive(false);
+            return;
+        }
+
+        flashTr.gameObject.SetActive(true);
+        BillboardFlash(0f);
+        flashTr.localScale = Vector3.one * flashSize * (0.25f + 0.45f * charge01);
+        flashMat.SetColor("_TintColor", flashColor * flashIntensity * 0.35f * charge01);
+        if (muzzleLight != null) muzzleLight.intensity = lightIntensity * 0.5f * charge01;
+    }
+
+    void BillboardFlash(float roll)
+    {
+        if (_cam == null) _cam = Camera.main;
+        if (_cam == null) return;
+        flashTr.rotation = Quaternion.LookRotation(flashTr.position - _cam.transform.position, _cam.transform.up)
+                           * Quaternion.Euler(0f, 0f, roll);
+    }
+
+    IEnumerator FlashRoutine(float sizeMul)
+    {
+        firing = true;
         flashTr.gameObject.SetActive(true);
         float roll = Random.Range(0f, 360f);
         float t = 0f;
@@ -120,14 +171,8 @@ public class BigGunShooterFX : MonoBehaviour
         {
             float k = 1f - (t / flashDuration);
 
-            if (_cam == null) _cam = Camera.main;
-            if (_cam != null)
-            {
-                flashTr.rotation = Quaternion.LookRotation(flashTr.position - _cam.transform.position, _cam.transform.up)
-                                   * Quaternion.Euler(0f, 0f, roll);
-            }
-
-            flashTr.localScale = Vector3.one * flashSize * (0.7f + 0.3f * k);
+            BillboardFlash(roll);
+            flashTr.localScale = Vector3.one * flashSize * sizeMul * (0.7f + 0.3f * k);
             flashMat.SetColor("_TintColor", flashColor * flashIntensity * k);
             if (muzzleLight != null) muzzleLight.intensity = lightIntensity * k;
 
@@ -137,23 +182,46 @@ public class BigGunShooterFX : MonoBehaviour
         if (muzzleLight != null) muzzleLight.intensity = 0f;
         flashMat.SetColor("_TintColor", Color.black);
         flashTr.gameObject.SetActive(false);
+        firing = false;
     }
 
-    void SpawnImpact()
+    void SpawnBullet(float charge01)
     {
-        RaycastHit hit;
-        if (!Physics.Raycast(muzzle.position, muzzle.forward, out hit, range, hitMask))
-            return;
+        if (bulletPrefab == null) return;
+
+        Transform fp = flashPoint != null ? flashPoint : muzzle;
+        Vector3 dir = muzzle != null ? muzzle.forward : transform.forward;
+
+        var go = Instantiate(bulletPrefab, fp.position, Quaternion.LookRotation(dir));
+
+        float scaleMul = Mathf.Lerp(1f, chargedScaleMul, charge01);
+        go.transform.localScale = bulletPrefab.transform.localScale * scaleMul;
+
+        var b = go.GetComponent<Bullet>();
+        if (b == null) b = go.AddComponent<Bullet>();
+
+        float spd = Mathf.Lerp(bulletSpeed, chargedBulletSpeed, charge01);
+        float decalMul = Mathf.Lerp(1f, chargedDecalMul, charge01);
+        b.Launch(dir, this, hitMask, spd, decalMul);
+    }
+
+    public void SpawnDecalAt(Vector3 point, Vector3 normal)
+    {
+        SpawnDecalAt(point, normal, 1f);
+    }
+
+    public void SpawnDecalAt(Vector3 point, Vector3 normal, float sizeMul)
+    {
         if (burnMaterial == null) return;
 
         var go = new GameObject("BurnDecal");
-        float offset = 0.25f;
-        go.transform.position = hit.point + hit.normal * offset;
-        go.transform.rotation = Quaternion.LookRotation(-hit.normal);
+        float offset = 0.25f * Mathf.Max(1f, sizeMul);
+        go.transform.position = point + normal * offset;
+        go.transform.rotation = Quaternion.LookRotation(-normal);
 
         var proj = go.AddComponent<Projector>();
         proj.orthographic = true;
-        proj.orthographicSize = decalSize * Random.Range(0.7f, 1.2f);
+        proj.orthographicSize = decalSize * sizeMul * Random.Range(0.7f, 1.2f);
         proj.nearClipPlane = 0.05f;
         proj.farClipPlane = offset + 0.35f;
         proj.material = new Material(burnMaterial);
