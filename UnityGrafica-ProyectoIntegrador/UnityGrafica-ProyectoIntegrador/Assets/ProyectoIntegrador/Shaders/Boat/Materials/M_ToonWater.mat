@@ -45,9 +45,9 @@ Material:
     - _NubeSuavidad: 0.15
     - _NubeUmbral: 0.5
     - _NubeVelocidad: 0.05
-    - _OleajeAmplitud: 0.28
-    - _OleajeFrecuencia: 2.2
-    - _OleajeVelocidad: 2
+    - _OleajeAmplitud: 0.18
+    - _OleajeFrecuencia: 1.1
+    - _OleajeVelocidad: 1.4
     - _PanSpeed: 0.5
     - _PesoDistorsion: 0.15
     - _Tiling: 3
