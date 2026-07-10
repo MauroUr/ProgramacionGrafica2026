@@ -232,13 +232,13 @@ public class BigGunShooterFX : MonoBehaviour
     IEnumerator FadeDecal(GameObject go, Projector proj)
     {
         float t = 0f;
-        Color baseCol = proj.material.HasProperty("_Color") ? proj.material.GetColor("_Color") : Color.black;
+        float baseSize = proj.orthographicSize;
         while (t < decalLifetime && go != null)
         {
             if (t > decalFadeStart)
             {
                 float k = 1f - (t - decalFadeStart) / (decalLifetime - decalFadeStart);
-                proj.material.SetColor("_Color", Color.Lerp(Color.white, baseCol, k));
+                proj.orthographicSize = baseSize * k;
             }
             t += Time.deltaTime;
             yield return null;

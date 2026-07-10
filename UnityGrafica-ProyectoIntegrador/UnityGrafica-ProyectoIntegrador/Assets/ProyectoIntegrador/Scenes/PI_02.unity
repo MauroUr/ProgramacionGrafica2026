@@ -583,10 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloomMaterial: {fileID: 2100000, guid: 559d1d3a7d03b7e4aa78736e068f5f19, type: 2}
-  threshold: 0.75
-  intensity: 1.4
-  iterations: 3
-  blurSize: 1.5
+  threshold: 0.6
+  intensity: 1.5
 --- !u!4 &154817685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011252882896, guid: ae6041c0c33285c43b4f806225c736b0, type: 3}
